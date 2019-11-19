@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>실습실 수정</title>
+	</head>
+	<body>
+		실습실   ♩   컴퓨터   ♩   SW   ♩   SW 라이선스   ♩   사용자      관리자님  로그아웃
+		<h2>실습실 수정</h2>
+		<hr><br><br>
+			<div align="center">
+				<form action="/lab" method="post">
+					<input type="hidden" name="_method" value="put" />실습실 번호 : ${lab.no}<br>
+					<input type="hidden" name="no" value="${lab.no}" />관리부서 명 : 
+					<input type="text" name="managementDeptName" value="${lab.managementDeptName}"><br>사용부서 명 : 
+					<input type="text" name="useDeptName" value="${lab.useDeptName}"><br>용도 : 
+					<input type="text" name="usage" value="${lab.usage}"><br>컴퓨터 수량 :
+					<input type="text" name="equipmentCount" value="${lab.equipmentCount}"><br><br><br>
+						<div align="right"><input type="submit" value="수정"></div>
+				</form>
+						
+				<form action="/lab/${no}" method="post"> 
+					<input type="hidden" name="_method" value="delete" />
+				    <div align="right"><input type="submit" value="삭제"></div>
+			   	</form>
+			</div>
+	</body>
+</html>

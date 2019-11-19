@@ -1,0 +1,26 @@
+package kr.ac.sunmoon.clms.lab;
+
+import java.util.List;
+
+public class LabInfoService {
+	public List<Lab> viewlist(){
+		return null;
+	}
+	
+	public Lab view(Lab lab) {
+		return lab;
+	}
+	
+	public void register(Lab lab){
+		
+	}
+	
+	public void modify(Lab lab) {
+		
+	}
+	
+	public void remove(Lab lab) {
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kr.ac.sunmoon.clms.sw.Software;
+
+@Service
+public class SWLicenseInfoServiceImpl implements SWLicenseInfoService {
+
+	@Override
+	public List<Software> viewlist() {
+		return null;
+	}
+
+	@Override
+	public Software view(SWLicense swLicense) {
+		return null;
+	}
+
+	@Override
+	public Software register(SWLicense swLicense) {
+		return null;
+	}
+
+	@Override
+	public void modify(SWLicense swLicense) {
+	}
+
+	@Override
+	public void remove(SWLicense swLicense) {
+	}
+
+	@Override
+	public void downExcel() {
+	}
+
+}

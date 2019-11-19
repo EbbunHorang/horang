@@ -1,0 +1,14 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+import kr.ac.sunmoon.clms.sw.Software;
+
+public interface SWLicenseInfoService {
+	public List<Software> viewlist();
+	public Software view(SWLicense swLicense);
+	public Software register(SWLicense swLicense);
+	public void modify(SWLicense swLicense);
+	public void remove(SWLicense swLicense);
+	public void downExcel();
+}

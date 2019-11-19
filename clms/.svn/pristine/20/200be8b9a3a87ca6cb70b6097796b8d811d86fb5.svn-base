@@ -1,0 +1,8 @@
+package kr.ac.sunmoon.clms.common;
+
+import kr.ac.sunmoon.clms.account.Account;
+
+public interface CommonService {
+	public void login(Account account);
+	public void logout();
+}

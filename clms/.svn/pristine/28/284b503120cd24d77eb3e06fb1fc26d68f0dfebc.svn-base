@@ -1,0 +1,11 @@
+package kr.ac.sunmoon.clms.change;
+
+import java.util.List;
+
+public interface ChangeNoticeMapper {
+	public List<ChangeNotice> selectList();
+	public ChangeNotice select(ChangeNotice changeNotice);
+	public void insert(ChangeNotice changeNotice);
+	public void update(ChangeNotice changeNotice);
+	public List<ChangeNotice> selectAll();
+}

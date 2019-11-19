@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <head>
+    <meta charset="UTF-8">
+    <title>실습실 수정</title>
+    </head>
+    <body>
+        실습실   ♩   컴퓨터   ♩   SW   ♩   SW 라이선스   ♩   사용자      관리자님  로그아웃
+        <h2>실습실 수정</h2>
+        <hr><br><br>
+            <div align="center">
+                <form action="/lab/${lab.no}" method="post" id="lab_id">
+                	<input type="hidden" name="_method" value="delete"/>실습실 번호 : ${lab.no}<br>
+                    <input type="hidden" name="no" value="${lab.no}" />관리부서 명 :
+                    <input type="text" name="managementDeptName" value="${lab.managementDeptName}" /><br>사용부서 명 :
+                    <input type="text" name="useDeptName" value="${lab.useDeptName}" /><br>용도 :
+                    <input type="text" name="usage" value="${lab.usage}" /><br>컴퓨터 수량 :
+                    <input type="text" name="equipmentCount" value="${lab.equipmentCount}" /><br><br><br>
+                    <button type="button" id="edit_btn">수정</button>
+                    <button type="button" id="delete_btn">삭제</button>
+                    <button type="button" id="list_btn">목록</button>
+                </form>
+            </div>
+    </body>
+    <script>
+		$(document).ready(function(){
+		       $("#edit_btn").click(function() {
+		           $('#lab_id').attr("action", "/lab");
+		           $('input[name=_method]').val('put');
+		           $('#lab_id').submit();
+		       });
+		       
+		       $("#delete_btn").click(function() {
+		           $('input[name=_method]').val('delete');
+		           $('#lab_id').submit();
+		       });
+		    });
+    </script>
+</html>
+
+

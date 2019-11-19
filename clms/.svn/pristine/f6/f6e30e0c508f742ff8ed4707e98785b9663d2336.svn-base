@@ -1,0 +1,29 @@
+package kr.ac.sunmoon.clms.lab;
+
+import java.util.List;
+
+public class LabInfoServiceImpl implements LabInfoService{
+
+	@Override
+	public List<Lab> viewlist() {
+		return null;
+	}
+
+	@Override
+	public Lab view(Lab lab) {
+		return null;
+	}
+
+	@Override
+	public void register(Lab lab) {
+	}
+
+	@Override
+	public void modify(Lab lab) {
+	}
+
+	@Override
+	public void remove(Lab lab) {
+	}
+
+}

@@ -1,0 +1,11 @@
+package kr.ac.sunmoon.clms.change;
+
+import java.util.List;
+
+public interface ChangeNoticeService {
+	public List<ChangeNotice> viewlist();
+	public ChangeNotice view(ChangeNotice changeNotice);
+	public void register(ChangeNotice changeNotice);
+	public void modify(ChangeNotice changeNotice);
+	public void downExcel();
+}

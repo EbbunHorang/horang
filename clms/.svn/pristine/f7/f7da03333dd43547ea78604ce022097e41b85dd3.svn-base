@@ -1,0 +1,65 @@
+package kr.ac.sunmoon.clms.lab;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@Controller
+public class LabController {
+	@Resource
+	private LabInfoService labInfoService;
+	
+	@RequestMapping(value="/lab", method = RequestMethod.GET)
+	public ModelAndView viewLabList() {
+		ModelAndView mav = new ModelAndView("/lab/list");
+		
+		List<Lab> listLab = this.labInfoService.list();
+		mav.addObject("labs",listLab);
+		
+		return mav;
+	}
+
+	@RequestMapping(value="/lab/form", method = RequestMethod.GET)
+	public ModelAndView addLab() {
+		return null;
+	}
+
+	@RequestMapping(value="/lab", method = RequestMethod.POST)
+	public ModelAndView addLab(Lab lab) {
+		return null;
+	}
+	
+	@RequestMapping(value="/lab/{no}/form", method = RequestMethod.GET)
+	public ModelAndView editLab(int no) {
+		return null;
+	}
+	
+	@RequestMapping(value="/lab/{no}", method = RequestMethod.PUT)
+	public ModelAndView editLab(Lab lab) {
+		return null;
+	}
+	
+	@RequestMapping(value="/lab/{no}", method = RequestMethod.DELETE)
+	public ModelAndView removeLab(Lab lab) {
+		return null;
+	}
+}
+
+
+//@RequestMapping(value = "/add", method = RequestMethod.POST)
+//public String add(Pet pet) {
+//	PetService petservice = new PetService();
+//	petservice.add(pet);
+//	return "redirect:/list";
+//}
+//
+//@RequestMapping(value = "/add", method = RequestMethod.GET)
+//public String add() {
+//	return "/add";
+//}

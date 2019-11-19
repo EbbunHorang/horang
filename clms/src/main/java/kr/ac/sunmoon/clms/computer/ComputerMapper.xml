@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.sunmoon.clms.computer.ComputerMapper">
+	<select id="selectAll" resultType="kr.ac.sunmoon.clms.computer.Computer">
+		SELECT 
+			NO
+		   ,IP_ADDRESS
+		   ,LABORATORY_NO
+		   ,SPEC_REG_DATE
+		   ,NAME
+		   ,CPU
+		   ,RAM
+		   ,VGA
+		   ,SSD
+		   ,HDD 
+		FROM 
+		    COMPUTER
+	</select>
+	
+	<select id="select" parameterType="int" resultType="kr.ac.sunmoon.clms.computer.Computer">
+		SELECT 
+			NO
+		   ,IP_ADDRESS
+		   ,LABORATORY_NO
+		   ,SPEC_REG_DATE
+		   ,NAME
+		   ,CPU
+		   ,RAM
+		   ,VGA
+		   ,SSD
+		   ,HDD 
+		FROM 
+			COMPUTER 
+		WHERE 
+			NO=#{no}
+	</select>
+	
+	<insert id="insert" parameterType="kr.ac.sunmoon.clms.agent.Message">
+		INSERT INTO 
+			COMPUTER 
+		VALUES(
+			 COMPUTER_NO_SEQ_NEXTVAL
+			,#{ipAddress}
+			,#{laboratoryNo}
+			,SYSDATE
+			,#{name}
+			,#{cpu}
+			,#{ram}
+			,#{vga}
+			,#{ssd}
+			,#{hdd}
+			  )
+	</insert>
+	
+	<update id="update" parameterType="kr.ac.sunmoon.clms.computer.Computer">
+		UPDATE
+			COMPUTER
+		SET
+			LABORATORY_NO=#{laboratoryNo}
+		    ,NAME=#{name}
+		WHERE 
+			NO=#{no}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM
+			COMPUTER
+		WHERE 
+			NO=#{no}
+	</delete>
+</mapper>

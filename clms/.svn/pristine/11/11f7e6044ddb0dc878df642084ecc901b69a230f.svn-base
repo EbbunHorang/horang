@@ -1,0 +1,29 @@
+package kr.ac.sunmoon.clms.computer;
+
+import java.util.List;
+
+public class ComputerInfoService {
+	public List<Computer> viewlist(){
+		return null;
+	}
+	
+	public Computer view(Computer computer) {
+		return computer;
+	}
+	
+	public void register(Computer computer) {
+		
+	}
+	
+	public void modify(Computer computer) {
+		
+	}
+	
+	public void remove(Computer computer) {
+		
+	}
+	
+	public void downExcel() {
+		
+	}
+}

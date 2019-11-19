@@ -1,0 +1,11 @@
+package kr.ac.sunmoon.clms.computer;
+
+import java.util.List;
+
+public interface ComputerMapper {
+	public List<Computer> selectList();
+	public Computer select(Computer computer);
+	public void insert(Computer computer);
+	public void update(Computer computer);
+	public void remove(Computer computer);
+}

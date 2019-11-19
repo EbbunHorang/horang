@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.sunmoon.clms.swlicense.SWLicenseMapper">
+	<select id="selectAll" resultType="kr.ac.sunmoon.clms.swlicense.SWLicense">
+		SELECT 
+			   SW_NO
+			 , CONTRACT_DATE
+			 , EXPIRY_DATE
+		FROM 
+			   SW_LICENSE;
+	</select>
+	
+	<select id="select" parameterType="int" resultType="kr.ac.sunmoon.clms.swlicense.SWLicense">
+		SELECT 
+			   SW_NO
+		     , CONTRACT_DATE
+		     , EXPIRY_DATE
+		     , COPIES
+		     , USE_LAB_NO
+		     , AUTHENTICATION_CODE
+		     , CONTRACT_DEPT
+		     , CONTRACT_NAME
+		     , CONTRACT_PHONE
+		     ,SUPPLIER_NAME
+		     , SUPPLIER_CONTACT_NAME
+		     , SUPPLIER_PHONE
+		     , NOTE
+		FROM 
+			   SW_LICENSE
+		<where>
+			<if test="swNo > 0">SW_NO = ${swNo}</if>
+		</where>
+	</select>
+	
+	<insert id="insert" parameterType="kr.ac.sunmoon.clms.swlicense.SWLicense">
+		INSERT INTO SW_LICENSE
+		VALUES (SWLICENSE_NO_SEQ.NEXTVAL
+			  , 10
+			  , '2019-11-14'
+			  , '2020-11-13'
+			  , 50
+			  , '301'
+			  , '21S5-89G3-E9W5-44C5'
+			  , 'SW 융합 교육원'
+	      	  , '이희경'
+	     	  , '010-0000-1222'
+	     	  , '더팔아'
+	     	  , '최고인'
+	     	  , '010-9999-1522'
+	     	  ,'');
+	</insert>
+	
+	<update id="update" parameterType="kr.ac.sunmoon.clms.swlicense.SWLicense>
+		UPDATE SW_LICENSE
+		SET 
+		<set>
+			<if test="swNo > 0">SW_NO = #{swNo}</if>
+			<if test="contractDate != null">CONTRACT_DATE = #{contractDate}</if>
+			<if test="expiryDdate != null">EXPIRY_DATE = #{expiryDate}</if>
+			<if test="copies > 0">COPIES=#{copies}</if>
+		</set>
+				 SW_NO=20, CONTRACT_DEPT='IT 교육학부'
+		WHERE NO=6;
+	</update>
+</mapper>

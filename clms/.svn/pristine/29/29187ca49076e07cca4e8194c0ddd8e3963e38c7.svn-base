@@ -1,0 +1,145 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.Date;
+
+public class SWLicense {
+	private int no;
+	private int swNo;
+	private Date contractDate;
+	private Date expiryDate;
+	private int copies;
+	private String authenticationCode;
+	private String contractDept;
+	private String contractName;
+	private String contractPhone;
+	private String supplierName;
+	private String supplierContractName;
+	private String supplierContractPhone;
+	private String note;
+
+	public SWLicense() {
+
+	}
+
+	public SWLicense(int no, int swNo, Date contractDate, Date expiryDate, int copies, String authenticationCode,
+			String contractDept, String contractName, String contractPhone, String supplierName,
+			String supplierContractName, String supplierContractPhone, String note) {
+		this.no = no;
+		this.swNo = swNo;
+		this.contractDate = contractDate;
+		this.expiryDate = expiryDate;
+		this.copies = copies;
+		this.authenticationCode = authenticationCode;
+		this.contractDept = contractDept;
+		this.contractName = contractName;
+		this.contractPhone = contractPhone;
+		this.supplierName = supplierName;
+		this.supplierContractName = supplierContractName;
+		this.supplierContractPhone = supplierContractPhone;
+		this.note = note;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public int getSwNo() {
+		return swNo;
+	}
+
+	public void setSwNo(int swNo) {
+		this.swNo = swNo;
+	}
+
+	public Date getContractDate() {
+		return contractDate;
+	}
+
+	public void setContractDate(Date contractDate) {
+		this.contractDate = contractDate;
+	}
+
+	public Date getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(Date expiryDate) {
+		this.expiryDate = expiryDate;
+	}
+
+	public int getCopies() {
+		return copies;
+	}
+
+	public void setCopies(int copies) {
+		this.copies = copies;
+	}
+
+	public String getAuthenticationCode() {
+		return authenticationCode;
+	}
+
+	public void setAuthenticationCode(String authenticationCode) {
+		this.authenticationCode = authenticationCode;
+	}
+
+	public String getContractDept() {
+		return contractDept;
+	}
+
+	public void setContractDept(String contractDept) {
+		this.contractDept = contractDept;
+	}
+
+	public String getContractName() {
+		return contractName;
+	}
+
+	public void setContractName(String contractName) {
+		this.contractName = contractName;
+	}
+
+	public String getContractPhone() {
+		return contractPhone;
+	}
+
+	public void setContractPhone(String contractPhone) {
+		this.contractPhone = contractPhone;
+	}
+
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+
+	public String getSupplierContractName() {
+		return supplierContractName;
+	}
+
+	public void setSupplierContractName(String supplierContractName) {
+		this.supplierContractName = supplierContractName;
+	}
+
+	public String getSupplierContractPhone() {
+		return supplierContractPhone;
+	}
+
+	public void setSupplierContractPhone(String supplierContractPhone) {
+		this.supplierContractPhone = supplierContractPhone;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+}

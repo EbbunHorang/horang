@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybtis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.sunmoon.sw.SWMapper">
+	<select id="selectAll" paramenter="kr.ac.sunmoon.sw.Software.java" resultType="kr.ac.sunmoon.sw.Software.java">
+		SELECT NO
+			 , NAME
+			 , USAGE
+			 , USE_DEPT
+			 , SERIAL_NUMBER
+			 , DIVISION
+		FROM SW;
+	</select>
+	
+	<select id="select" paramenter="kr.ac.sunmoon.sw.Software.java" resultType="kr.ac.sunmoon.sw.Software.java">
+		SELECT NAME
+			 , USAGE
+			 , USE_DEPT
+			 , SERIAL_NUMBER
+			 , DIVISION
+		FROM SW
+		WHERE NO=#{no};
+	</select>
+	
+	<insert id="insert" parameterType="kr.ac.sumoon.sw.Software.java">
+		INSERT INTO SW
+		VALUES (SW_SEQ.NEXTVAL
+	 		  , #{name}
+	  		  , #{usage}
+	  		  , #{useDept}
+	 		  , #{serialNumber}
+	  		  , #{division}
+		);
+	</insert>
+	
+	<delete id="delete" parameter="kr.ac.sumoon.sw.Software.java">
+		DELETE FROM SW
+		WHERE NAME=#{name};
+	</delete>
+</mapper>

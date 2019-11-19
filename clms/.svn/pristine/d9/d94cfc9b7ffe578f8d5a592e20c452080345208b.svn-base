@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.ac.sunmoon.clms.lab.Lab" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>실습실 목록</title>
+	</head>
+	<body>
+	실습실   ♩   컴퓨터   ♩   SW   ♩   SW 라이선스   ♩   사용자      관리자님  로그아웃
+	<br>
+	<h2>실습실 목록</h2>
+	<hr><br><br>
+		<div align="center">
+			<table border="1">
+				<tr>
+					<td>실습실 번호</td>
+					<td>관리부서 명</td>
+					<td>사용부서 명</td>
+					<td>컴퓨터 수량</td>
+				</tr>
+			<c:forEach items="${labs}" var="lab" >
+				<tr>
+					<td><a href="/lab/${lab.no}/form">${lab.no}</a></td>
+					<td>${lab.managementDeptName}</td>
+					<td>${lab.useDeptName}</td>
+					<td>${lab.equipmentCount}</td>
+				</tr>
+			</c:forEach>
+			</table><br>
+	        <div align="right"><button type="button" onclick="location.href='/lab/form'">등록</button></div>
+	    </div>
+	</body>
+</html>

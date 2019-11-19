@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<head>
+	<meta charset="UTF-8">
+	<title>컴퓨터 정보 수정</title>
+	</head>
+		<body>
+		실습실   ♩   컴퓨터   ♩   SW   ♩   SW 라이선스   ♩   사용자      관리자님  로그아웃
+				<h2>컴퓨터 정보 수정</h2>
+				<hr><br><br>
+				<div align="center">
+					<form action="/computer/${computer.no}" method="post" id="computer_id">
+						<input type="hidden" name="_method" value="put" />
+						<input type="hidden" name="no" value="${computer.no}" />
+						실습실 번호 : <input type="text" name="laboratoryNo" value="${computer.laboratoryNo}"><br>
+						이름 : <input type="text" name="name" value="${computer.name}"><br>
+						기준 등록 일자 : ${computer.specRegDate}<br>
+						CPU : ${computer.cpu}<br>
+						VGA : ${computer.vga}<br>
+						RAM : ${computer.ram}<br>
+						HDD : ${computer.hdd}<br>
+						SSD : ${computer.ssd}<br>
+							<button type="button" id="delete_btn">삭제</button>
+							<button type="button" id="edit_btn">수정</button>
+					</form>
+				</div>
+		</body>
+	
+	<script>
+		$(document).ready(function(){
+	       $("#edit_btn").click(function() {
+	           $('#computer_id').attr("action", "/computer");
+	           $('input[name=_method]').val('put');
+	           $('#computer_id').submit();
+	       });
+	       
+	       $("#delete_btn").click(function() {
+	           $('input[name=_method]').val('delete');
+	           $('#computer_id').submit();
+	       });
+	    });
+	</script>
+</html>

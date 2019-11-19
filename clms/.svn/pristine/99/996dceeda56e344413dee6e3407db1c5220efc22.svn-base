@@ -1,0 +1,12 @@
+package kr.ac.sunmoon.clms.sw;
+
+import java.util.List;
+
+public interface SWMapper {
+	public List<Software> selectList();	
+	public Software select(Software software);
+	public void insert(Software software);
+	public void update (Software software);
+	public void remove	(Software software);
+	public List<Software> selectAll();
+}

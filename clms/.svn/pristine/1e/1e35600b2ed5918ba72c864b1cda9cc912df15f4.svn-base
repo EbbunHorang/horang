@@ -1,0 +1,12 @@
+package kr.ac.sunmoon.clms.sw;
+
+import java.util.List;
+
+public interface SWInfoService {
+	public List<Software> viewlist();
+	public Software view(Software software);
+	public void register(Software software);
+	public void modify(Software softeare);
+	public void remove(Software software);
+	public void downExcel();
+}

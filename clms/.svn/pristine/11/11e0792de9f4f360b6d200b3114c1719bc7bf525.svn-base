@@ -1,0 +1,12 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+public interface SWLicenseInfoService {
+	public List<SWLicense> list();
+	public SWLicense view(int no);
+	public SWLicense register(SWLicense swLicense);
+	public void modify(SWLicense swLicense);
+	public void remove(SWLicense swLicense);
+	// 엑셀 다운로드
+}

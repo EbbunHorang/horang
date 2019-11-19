@@ -1,0 +1,11 @@
+package kr.ac.sunmoon.clms.account;
+
+import java.util.List;
+
+public interface AccountInfoService {
+	public List<Account> viewlist();	
+	public Account view(Account account);	
+	public void register(Account account);
+	public void modify(Account account);
+	public void remove(Account account);
+}

@@ -1,0 +1,12 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+public interface SWLicenseMapper {
+	public List<SWLicense> selectList();	
+	public SWLicense select(SWLicense swLicense);
+	public void insert(SWLicense swLicense);
+	public void update(SWLicense swLicense);
+	public void remove(SWLicense swLicense);
+	public List<SWLicense> selectAll();
+}

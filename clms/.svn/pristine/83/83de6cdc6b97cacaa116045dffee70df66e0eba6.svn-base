@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CLMS</title>
+</head>
+<body>
+	<form action="/swlicensw" method="post">
+		SW 이름 : <input type="text" name="swName"/>
+		실습실 선택 : <input type="text" name="useLabNo"/><br/>
+		실습실 : <input type="text" name="useLab"/><br/>
+		SW 계약 일자 : <input type="text" id="constractDay"/>
+		SW 만료 일자 : <input type="text" id="expiryDay"/><br/>
+		카피수 : <input type="text" name="copies"/><br/>
+		계약 담당 부서 명 : <input type="text" name="contractDept"/><br/>
+		계약 담당자 명 : <input />
+		계약 담당자 전화번호 : <input /><br/>
+		공급 업체 명 : <input /><br/>
+		공급 업체 담당자 명 : <input /> 
+		공급 업체 담당자 전화번호 : <input /><br/>
+		비고 : <input />
+		<br/>
+		<br/>
+		<div align="right">
+	        <button type="button" id="add_btn">등록</button>
+	        <button type="button" id="list_btn">목록</button>
+		</div>
+	</form>
+</body>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script>
+	$(function() {
+	    $( "#constractDay" ).datepicker({
+	    	showOn: "focus",
+	    	changeMonth: true,
+	    	changeYear: true,
+	    	nextText: '다음 달',
+	    	prevText: '이전 달',
+ 	    	showButtonPannel: true,
+	    	currentText: '오늘 날짜',
+	    	dateFormat: 'yy-mm-dd', 
+	    	changeMonth: true, 
+	        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+	        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	    });
+	    
+	    $( "#expiryDay" ).datepicker({
+	    	showOn: "focus",
+	    	changeMonth: true,
+	    	changeYear: true,
+	    	nextText: '다음 달',
+	    	prevText: '이전 달',
+ 	    	showButtonPannel: true,
+	    	currentText: '오늘 날짜',
+	    	dateFormat: 'yy-mm-dd', 
+	    	changeMonth: true, 
+	        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+	        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	    });
+	    
+	    $(function() {
+	        $('#constractDay').datepicker({dateFormat: 'yy-mm-dd'})
+	        $('#expiryDay').datepicker({dateFormat: 'yy-mm-dd'})
+	    });
+	});
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.sunmoon.clms.swlicense.SWLicenseMapper">
+	<select id="selectAll" resultType="kr.ac.sunmoon.clms.swlicense.SWLicense" >
+		SELECT 
+			 NO
+			,SW_NO
+			,CONTRACT_DATE
+			,EXPIRY_DATE
+			,COPIES
+			,USE_LAB_NO
+			,AUTHENTICATION_CODE
+			,CONTRACT_DEPT
+			,CONTRACT_NAME
+			,CONTRACT_PHONE
+			,SUPPLIER_NAME
+			,SUPPLIER_CONTACT_NAME
+			,SUPPLIER_CONTACT_PHONE
+			,NOTE
+		FROM SW_LICENSE
+	</select>
+	
+	<select id="select" parameterType="int" resultType="kr.ac.sunmoon.clms.swlicense.SWLicense" >
+		SELECT
+			 SW_NO
+			,CONTRACT_DATE
+			,EXPIRY_DATE
+			,COPIES
+			,USE_LAB_NO
+			,AUTHENTICATION_CODE
+			,CONTRACT_DEPT
+			,CONTRACT_NAME
+			,CONTRACT_PHONE
+			,SUPPLIER_NAME
+			,SUPPLIER_CONTACT_NAME
+			,SUPPLIER_CONTACT_PHONE
+			,NOTE
+		FROM SW_LICENSE
+		<where>
+			<if test="no > 0">NO = ${no}</if>
+		</where>
+	</select>
+	
+	<insert id="insert" parameterType="kr.ac.sunmoon.clms.swlicense.SWLicense" >
+		INSERT INTO SW_LICENSE
+		VALUES (SWLICENSE_NO_SEQ.NEXTVAL
+			  , #{swNo}
+			  , #{labNo}
+	  		  , #{contractDate}
+	  		  , #{expiryDate}
+	 		  , #{copies}
+	  		  , #{useLabNo}
+	  		  , #{authenticationCode}
+	  		  , #{contractDept}
+	  		  , #{contractName}
+	 		  , #{contractPhone}
+	  		  , #{supplierName}
+	  		  , #{supplierContactName}
+	  		  , #{supplierPhone}
+	  		  , #{note}
+	  	)
+	</insert>
+	
+	<update id="update" parameterType="kr.ac.sunmoon.clms.swlicense.SWLicense">
+		UPDATE SW_LICENSE
+		<set>
+			<if test="swNo gte 0">SW_NO = #{swNo},</if>
+			<if test="labNo gte 0">LAB_NO = #{labNo},</if>
+			<if test="contractDate neq null">CONTRACT_DATE = #{contractDate},</if>
+			<if test="expiryDate neq null">EXPIRY_DATE = #{expiryDate},</if>
+			<if test="copies gte 0">COPIES = #{copies},</if>
+			<if test="useLabNo neq null">USE_LAB_NO = #{useLabNo},</if>
+			<if test="authenticationCode neq null">AUTHENTICATION_CODE = #{authenticationCode},</if>
+			<if test="contractDept neq null">CONTRACT_DEPT = #{contractDept},</if>
+			<if test="contractName neq null">CONTRACT_NAME = #{contractName},</if>
+			<if test="contractPhone neq null">CONTRACT_PHONE = #{contractPhone},</if>
+			<if test="supplierName neq null">SUPPLIER_NAME = #{supplierName},</if>
+			<if test="supplierContactName neq null">SUPPLIER_CONTACT_NAME = #{supplierContractName,</if>
+			<if test="supplierContactPhone neq null">SUPPLIER_CONTACT_PHONE = #{supplierContactPhone},</if>
+			<if test="note neq null">NOTE = #{note},</if>
+		</set>
+		WHERE NO = #{no}
+	</update>
+	
+	<delete id="delete" parameterType="kr.ac.sunmoon.clms.swlicense.SWLicense">
+		DELETE FROM SW_LICENSE
+		<where>
+			<if test="no">NO = #{no}</if>
+		</where>
+	</delete>
+</mapper>

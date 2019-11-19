@@ -1,0 +1,71 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class SWLicenseController {
+	@Autowired
+	private SWLicenseInfoService swLicenseInfoService;
+	
+	// sw 라이선스 목록 조회
+	@GetMapping("/swlicense")
+	public ModelAndView viewSWLicenseList() {
+		ModelAndView mav = new ModelAndView("/swlicense/list");
+		
+		List<SWLicense> swLicenses = this.swLicenseInfoService.list();
+		
+		mav.addObject("swLicenses", swLicenses);
+		
+		return mav;
+	}
+	
+	// SW 라이선스 정보 조회
+	@GetMapping("/swlicense/{swLicenseNo}")
+	public ModelAndView viewSWLicense(@PathVariable("swLicenseNo") int no) {
+		ModelAndView mav = new ModelAndView("/swlicense/view");
+		// 항목을 가져온다.
+		SWLicense swLicense = this.swLicenseInfoService.view(no);
+		//mav에 저장한다.
+		mav.addObject("swLicense", swLicense);
+		
+		return mav;
+	}
+	
+	// SW 라이선스 등록 폼
+	@GetMapping("/swlicense/form")
+	public ModelAndView addSWLicense() {
+		ModelAndView mav = new ModelAndView("/swlicense/add");
+		return mav;
+	}
+	
+	@PostMapping("/swlicense")
+	public ModelAndView addSWLicense(SWLicense swLicense) {
+		return null;
+	}
+	
+	@GetMapping("/swlicense/{no}/form")
+	public ModelAndView editSWLicense(@PathVariable("no") int no) {
+		return null;
+	}
+	
+	@PutMapping("/swlicense")
+	public ModelAndView editSWLicense(SWLicense swLicense) {
+		return null;
+	}
+	
+	@DeleteMapping("/swlicense/{no}")
+	public ModelAndView removeSWLicense(@PathVariable("no") int no) {
+		return null;
+	}
+	
+	// 엑셀 다운로드
+}

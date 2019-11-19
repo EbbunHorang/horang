@@ -1,0 +1,28 @@
+package kr.ac.sunmoon.clms.change;
+
+import java.util.List;
+
+public class ChangeNoticeServiceImpl implements ChangeNoticeService {
+
+	@Override
+	public List<ChangeNotice> viewlist() {
+		return null;
+	}
+
+	@Override
+	public ChangeNotice view(ChangeNotice changeNotice) {
+		return null;
+	}
+
+	@Override
+	public void register(ChangeNotice changeNotice) {
+	}
+
+	@Override
+	public void modify(ChangeNotice changeNotice) {
+	}
+
+	@Override
+	public void downExcel() {
+	}
+}

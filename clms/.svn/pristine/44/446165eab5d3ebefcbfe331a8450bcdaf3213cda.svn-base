@@ -1,0 +1,33 @@
+package kr.ac.sunmoon.clms.computer;
+
+import java.util.List;
+
+public class ComputerInfoServiceImpl implements ComputerInfoService {
+
+	@Override
+	public List<Computer> viewlist() {
+		return null;
+	}
+
+	@Override
+	public Computer view(Computer computer) {
+		return null;
+	}
+
+	@Override
+	public void register(Computer computer) {
+	}
+
+	@Override
+	public void modify(Computer computer) {
+	}
+
+	@Override
+	public void remove(Computer computer) {
+	}
+
+	@Override
+	public void downExcel() {
+	}
+
+}

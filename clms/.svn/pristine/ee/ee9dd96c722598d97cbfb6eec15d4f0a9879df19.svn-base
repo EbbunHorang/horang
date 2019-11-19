@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SW 등록</title>
+</head>
+<body>
+	실습실  |  컴퓨터  |  SW  |  SW 라이선스  |  사용자	
+	<br/>
+	<br/>
+	<h2>SW 등록</h2>
+	<hr/>
+	<br/>
+	<br/>
+	<div class="from-group" align="center">
+		<form action="/sw" method="POST">
+			SW 이름 : <input type="text" name="name" ><br/>
+			구분 : <select name="division">
+					<option>선택
+					<option value="F" >무료
+					<option value="P" >유료
+				 </select><br/>
+			SW 사용 부서 명 : <input type="text" name="useDept" ><br/>
+			SW 용도 : <input type="text" name="usage" ><br/>
+			SW 시리얼 넘버 : <input type="text" name="serialNumber" ><br/>
+
+			<br/>
+			<div align="right">
+		        <input type="submit" value="등록" />
+		        <button type="button" onclick="location.href='/sw'">목록</button>
+		    </div>
+		</form><br/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+package kr.ac.sunmoon.clms.swlicense;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class SWLicenseInfoServiceImpl implements SWLicenseInfoService {
+	@Autowired
+	private SWLicenseMapper swLicenseMapper;
+	
+	@Override
+	public List<SWLicense> list() {
+		// 1. SW 라이선스 목록을 조회한다.
+		List<SWLicense> swLicenses = this.swLicenseMapper.selectAll();
+		return swLicenses;
+	}
+
+	@Override
+	public SWLicense view(int no) {
+		// 1. SW 라이선스 정보를 조회한다.
+		SWLicense swLicense = this.swLicenseMapper.select(no);
+		return swLicense;
+	}
+
+	@Override
+	public SWLicense register(SWLicense swLicense) {
+		return null;
+	}
+
+	@Override
+	public void modify(SWLicense swLicense) {
+
+	}
+
+	@Override
+	public void remove(SWLicense swLicense) {
+
+	}
+
+}
